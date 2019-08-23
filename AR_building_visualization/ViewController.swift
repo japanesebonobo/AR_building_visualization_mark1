@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         return configuration
     }()
     
-    private var buttonNode: SCNNode!
+    private var gfoTitleNode: SCNNode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
-        buttonNode = SCNScene(named: "art.scnassets/twitter_button.scn")!.rootNode
+        gfoTitleNode = SCNScene(named: "art.scnassets/gfo_building_title.scn")!.rootNode
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +47,7 @@ extension ViewController: ARSCNViewDelegate {
             return
         }
         //名刺の上にボタンを表示
-        node.addChildNode(buttonNode)
+        node.addChildNode(gfoTitleNode)
     }
 }
 
